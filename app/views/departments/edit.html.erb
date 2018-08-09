@@ -42,7 +42,7 @@
           Region
         </label>
 
-        <input type="text" id="region_id" name="region_id" placeholder="Region" class="form-control" value="<%= @department.region_id %>">
+        <%= select_tag(:region_id, options_from_collection_for_select(Region.all, :id, :name, @department.region_id), :class => "form-control") %>
       </div>
 
       <button class="btn btn-warning">

@@ -6,16 +6,40 @@
   <div class="col-md-12 mb-2">
     <dl class="dl-horizontal">
       <dt>Employee</dt>
-      <dd><%= @requirement.employee_id %></dd>
+      <dd>
+        <% if @requirement.employee.present? %>
+          <a href="/employees/<%= @requirement.employee_id %>">
+            <%= @requirement.employee.mcm_userid %>
+          </a>
+        <% end %>
+      </dd>
 
       <dt>Department</dt>
-      <dd><%= @requirement.department_id %></dd>
+      <dd>
+        <% if @requirement.department.present? %>
+          <a href="/departments/<%= @requirement.department_id %>">
+            <%= @requirement.department.name %>
+          </a>
+        <% end %>
+      </dd>
 
       <dt>Region</dt>
-      <dd><%= @requirement.region_id %></dd>
+      <dd>
+        <% if @requirement.region.present? %>
+          <a href="/regions/<%= @requirement.region_id %>">
+            <%= @requirement.region.name %>
+          </a>
+        <% end %>
+      </dd>
 
       <dt>Elearning</dt>
-      <dd><%= @requirement.elearning_id %></dd>
+      <dd>
+        <% if @requirement.elearning.present? %>
+          <a href="/elearnings/<%= @requirement.elearning_id %>">
+            <%= @requirement.elearning.title %>
+          </a>
+        <% end %>
+      </dd>
 
     </dl>
 

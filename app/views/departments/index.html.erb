@@ -19,7 +19,13 @@
       <tr>
         <td><%= department.name %></td>
         <td><%= department.mcm_id %></td>
-        <td><%= department.region.name %></td>
+        <td>
+          <% if department.region.present? %>
+            <a href="/regions/<%= department.region.id %>">
+              <%= department.region.name %>
+            </a>
+          <% end %>
+        </td>
         <td>
           <a href="/departments/<%= department.id %>" class="btn btn-primary">Show</a>
           <a href="/departments/<%= department.id %>/edit" class="btn btn-warning">Edit</a>

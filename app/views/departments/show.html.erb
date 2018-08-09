@@ -12,7 +12,13 @@
       <dd><%= @department.mcm_id %></dd>
 
       <dt>Region</dt>
-      <dd><%= @department.region_id %></dd>
+      <dd>
+        <% if @department.region.present? %>
+          <a href="/regions/<%= @department.region_id %>">
+            <%= @department.region.name %>
+          </a>
+        <% end %>
+      </dd>
 
     </dl>
 
